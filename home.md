@@ -14,6 +14,7 @@ Per poter effettuare questa operazione è necessario che la scheda di rete dell'
 3. **Phishing tramite pagina web**: Una volta connesso all'AP malevolo, il client viene reindirizzato a una pagina web di phishing che può assumere diverse forme a seconda dell'attacco specifico. Queste pagine sono progettate per sembrare legittime e convincere l'utente a fornire informazioni sensibili. Le pagine possono essere create ad-hoc per l'attacco oppure è possibile sfruttare quelle già presenti online create da altri utenti.
 
 ![Vignetta che rappresenta il funzionamento dell'attacco](images/scheme.jpeg)
+_Figura 1: Vignetta che rappresenta il funzionamento dell'attacco_
 
 
 ## Tipologie di attacco
