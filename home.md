@@ -9,7 +9,7 @@ Wifiphisher è un potente strumento per condurre attacchi di phishing su reti Wi
 Il funzionamento di Wifiphisher si basa su tre fasi principali:
 
 1. **Disconnessione del target**: Wifiphisher inizia inviando pacchetti di deautenticazione al client target e all'AP legittimo. Questi pacchetti, causano la disconnessione forzata del client dalla rete originale.
-Per poter effettuare questa operazione è necessario che la scheda di rete dell'attacante supporti sia la monitor mode, per poter scansionare le reti wireless nelle vicinanze, sia la packet injection, per poter inviare i pacchetti di deautenticazione.
+Per poter effettuare questa operazione, quindi, è necessario che la scheda di rete dell'attacante supporti sia la monitor mode, per poter scansionare le reti wireless nelle vicinanze, sia la packet injection, per poter inviare i pacchetti di deautenticazione.
 2. **Creazione di un AP malevolo**: Dopo aver disconnesso il client, Wifiphisher crea un access point (AP) malevolo con lo stesso SSID dell'AP legittimo. Il client, non riuscendo a connettersi alla propria rete a causa dei pacchetti di deautenticazione, si collega inconsapevolmente all'AP malevolo.
 3. **Phishing tramite pagina web**: Una volta connesso all'AP malevolo, il client viene reindirizzato a una pagina web di phishing che può assumere diverse forme a seconda dell'attacco specifico. Queste pagine sono progettate per sembrare legittime e convincere l'utente a fornire informazioni sensibili.
 
