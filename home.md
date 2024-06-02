@@ -45,22 +45,30 @@ La tecnica sfrutta la fiducia che gli utenti ripongono nelle notifiche di aggior
 ![Un esempio della pagina di phishing](images/fw_upgrade.png)
 _Figura 2: Un esempio della pagina di phishing_
 
-6. **Raccolta delle credenziali**: La pagina di phishing chiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware, per rendenre il tutto credibile sono aggiunti anche dei finti termini e condizioni. Essendo la pagina personalizzabile, con pochissimo sforzo è possibile creare una pagina identica a quella originale. Quando l'utente inserisce la password quest'ultima verrà trasmessa all'attaccante, nel mentre, l'utente, verrà condotto in una pagina contenente una barra di progressione che gli darà l'illusione di star effettivamente facendo l'aggiornmento software (Figura 3).
+6. **Raccolta delle credenziali**: La pagina di phishing richiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware. Per rendere la richiesta più credibile, vengono aggiunti svariati elementi come ad esempio dei finti termini e condizioni. La Figura 2 è solamente un esempio in quanto la pgina di phishing è interamente personalizzabile tramite codice HTML perciò è possibile creare un'interfaccia perfettaemnet identica a quella originale. Quando l'utente inserisce la password, questa viene trasmessa all'attaccante. Contemporaneamente, l'utente vede una pagina con una barra di progressione, dando l'illusione di un vero aggiornamento software (Figura 3).
 
 ![Un esempio della pagina di phishing](images/fw_upgrade-2.png)
 _Figura 3: Un esempio della barra di progressione_
 
-7. **Ripristino situazione precedente**: Una volta ottenuta la password l'attaccante spegnerà l'AP malevolo, l'utente avrà l'illusione che l'aggiornamento software sia terminato e quindi si accingerà a riconnettersi al proprio Wi-Fi che sarà nuovamente quello legittimo perfettamente funzionante.
+7. **Ripristino situazione precedente**: Dopo aver ottenuto la password, l'attaccante spegne l'AP malevolo. L'utente crede che l'aggiornamento software sia terminato e tenta di riconnettersi al proprio Wi-Fi, che ora è nuovamente quello legittimo e perfettamente funzionante.
 
 
 ## Modello MITRE ATT&CK
 
 In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page può essere classificata sotto diverse categorie di tattiche e tecniche.
 
-- **Tattica: Initial Access**: L'attacco inizia con l'accesso iniziale alla rete della vittima.
-  - **Tecnica: Drive-by Compromise**: L'utente è indotto a interagire con una pagina web maligna.
-- **Tattica: Credential Access**: L'obiettivo principale è ottenere le credenziali dell'utente.
-  - **Tecnica: Input Capture**: La pagina di phishing cattura direttamente le credenziali inserite dall'utente.
+1. Reconnaissance :
+   - Gather Victim Network Information (T1590): Wifiphisher utilizza strumenti come airodump-ng per monitorare le reti wireless vicine e raccogliere informazioni sulle reti e sui dispositivi connessi.
+2. Resource Development:
+   - Compromise Infrastructure (T1584): L'attaccante prepara un punto di accesso malevolo, configurandolo per imitare la rete legittima (evil twin).
+3. Initial Access:
+   - Drive-by Compromise (T1189): Inducendo gli utenti a connettersi al punto di accesso malevolo, Wifiphisher ottiene l'accesso iniziale ai dispositivi target.
+4. Execution:
+   - Command and Scripting Interpreter (T1059): L'esecuzione degli script necessari per inviare pacchetti di deautenticazione e reindirizzare il traffico dei client.
+5. Credential Access:
+   - Credentials from Web Browsers (T1555.003): Tramite una pagina di phishing, Wifiphisher raccoglie le credenziali Wi-Fi inserite dagli utenti.
+6. Impact:
+   - Resource Hijacking (T1496): Forzando la disconnessione e inducendo gli utenti a connettersi al punto di accesso malevolo, l'attaccante dirotta temporaneamente le risorse di rete dell'utente.
 
 ## Prevenzione
 
