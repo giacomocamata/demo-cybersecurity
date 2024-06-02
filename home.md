@@ -2,7 +2,7 @@
 
 ## Introduzione
 
-Wifiphisher è un potente strumento Python per condurre attacchi di phishing su reti Wi-Fi. Sfruttando ingegneria sociale e tecniche di spoofing, induce gli utenti a fornire credenziali o a compiere azioni che compromettono la sicurezza della rete.
+Wifiphisher è un potente strumento Python per condurre attacchi di phishing su reti Wi-Fi. Sfruttando ingegneria sociale e tecniche di spoofing, induce gli utenti a fornire credenziali o a compiere azioni che compromettono la loro sicurezza.
 
 ## Funzionamento di Wifiphisher
 
