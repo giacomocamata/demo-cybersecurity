@@ -1,4 +1,4 @@
-# Wifiphisher
+# **Wifiphisher**
 
 ## Introduzione
 
@@ -47,7 +47,7 @@ _Figura 2: Un esempio della pagina di phishing_
 
 6. **Raccolta delle credenziali**: La pagina di phishing richiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware. Per rendere la richiesta più credibile, vengono aggiunti svariati elementi come ad esempio finti termini e condizioni. La Figura 2 è solamente un esempio, in quanto la pgina di phishing è interamente personalizzabile tramite codice HTML, perciò è possibile creare un'interfaccia perfettamente identica a quella originale. Quando l'utente inserisce la password, questa viene trasmessa all'attaccante, contemporaneamente l'utente vede una pagina con una barra di progressione, creando l'illusione di un vero aggiornamento software (Figura 3).
 
-![Un esempio della pagina di phishing](images/fw_upgrade-2.png)
+![Un esempio della pagina di phishing](images/fw_upgrade-progress.png)
 _Figura 3: Un esempio della barra di progressione_
 
 7. **Ripristino situazione precedente**: Dopo aver ottenuto la password, l'attaccante spegne l'AP malevolo. A questo punto l'utente crederà che l'aggiornamento software sia terminato e tenterà di riconnettersi al proprio Wi-Fi, che sarà nuovamente quello legittimo e funzionante.
