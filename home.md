@@ -36,21 +36,21 @@ Entriamo nello specifico della prima tecnica: Firmware Update Page, la quale sfr
 
 2. **Disconnessione del target**: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete target, forzandoli a disconnettersi dall'access point legittimo. Questa interruzione temporanea del servizio, induce gli utenti a cercare di riconnettersi. Per realizzare questa fase, la scheda di rete deve essere in grado di iniettare pacchetti sia all'AP che al client, in modo tale che si disconnettano.
 
-3. **Creazione dell'AP malevolo**: Simultaneamente alla disconnessione, Wifiphisher crea un AP con lo stesso SSID della rete legittima il quale può anche utilizzare un canale differente per evitare interferenze con l'access point originale. Questa pratica è chiamata *evil twin*, ovvero gemello maligno.
+3. **Creazione dell'AP malevolo**: Simultaneamente alla disconnessione, Wifiphisher crea un AP con lo stesso SSID della rete legittima; può anche utilizzare un canale differente per evitare interferenze con l'access point originale. Questa pratica è chiamata *evil twin*, ovvero gemello maligno.
 
-4. **Connessione del client all'AP**: Quando l'utente nota che il proprio dispositivo è disconnesso, tenta di riconnettersi al Wi-Fi nelle impostazioni del dispositivo. Non trovando la rete legittima, l'utente vede solo la rete creata dall'AP maligno, poiché la rete legittima è stata nascosta poiché considerata non funzionante.
+4. **Connessione del client all'AP**: Quando l'utente nota che il proprio dispositivo è disconnesso, tenta di riconnettersi al Wi-Fi nelle impostazioni del dispositivo. Non trovando la rete legittima, l'utente vede solo la rete creata dall'AP maligno, poiché la rete legittima è stata nascosta in quanto considerata non funzionante.
 
 5. **Reindirizzamento alla pagina di phishing**: Una volta connessi, i client vengono automaticamente reindirizzati a una pagina web che simula l'interfaccia di aggiornamento del firmware del loro router (Figura 2). Questo è possibile grazie a un web server e alla manipolazione dei server DHCP e DNS all'interno dell'AP maligno.
 
 ![Un esempio della pagina di phishing](images/fw_upgrade.png)
 _Figura 2: Un esempio della pagina di phishing_
 
-6. **Raccolta delle credenziali**: La pagina di phishing richiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware. Per rendere la richiesta più credibile, vengono aggiunti svariati elementi come ad esempio dei finti termini e condizioni. La Figura 2 è solamente un esempio in quanto la pgina di phishing è interamente personalizzabile tramite codice HTML perciò è possibile creare un'interfaccia perfettaemnet identica a quella originale. Quando l'utente inserisce la password, questa viene trasmessa all'attaccante. Contemporaneamente, l'utente vede una pagina con una barra di progressione, dando l'illusione di un vero aggiornamento software (Figura 3).
+6. **Raccolta delle credenziali**: La pagina di phishing richiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware. Per rendere la richiesta più credibile, vengono aggiunti svariati elementi come ad esempio finti termini e condizioni. La Figura 2 è solamente un esempio, in quanto la pgina di phishing è interamente personalizzabile tramite codice HTML, perciò è possibile creare un'interfaccia perfettamente identica a quella originale. Quando l'utente inserisce la password, questa viene trasmessa all'attaccante, contemporaneamente l'utente vede una pagina con una barra di progressione, creando l'illusione di un vero aggiornamento software (Figura 3).
 
 ![Un esempio della pagina di phishing](images/fw_upgrade-2.png)
 _Figura 3: Un esempio della barra di progressione_
 
-7. **Ripristino situazione precedente**: Dopo aver ottenuto la password, l'attaccante spegne l'AP malevolo. L'utente crede che l'aggiornamento software sia terminato e tenta di riconnettersi al proprio Wi-Fi, che ora è nuovamente quello legittimo e perfettamente funzionante.
+7. **Ripristino situazione precedente**: Dopo aver ottenuto la password, l'attaccante spegne l'AP malevolo. A questo l'utente crederà che l'aggiornamento software sia terminato e tenterà di riconnettersi al proprio Wi-Fi, che sarà nuovamente quello legittimo e perfettamente funzionante.
 
 
 ## Modello MITRE ATT&CK
