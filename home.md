@@ -32,25 +32,25 @@ La tecnica sfrutta la fiducia che gli utenti ripongono nelle notifiche di aggior
 
 ### Fasi dell'attacco in dettaglio
 
-1. **Selezione del target**: L'attaccante sceglie un punto di accesso Wi-Fi con un'alta probabilità di avere molti utenti connessi. Il tool utilizza strumenti come `airodump-ng` per monitorare le reti wireless vicine e identificare quelle con più client.
+1. **Selezione del target**: L'attaccante sceglie un punto di accesso Wi-Fi con un'alta probabilità di avere molti utenti connessi. Il tool utilizza strumenti come `airodump-ng` per monitorare le reti wireless vicine e identificare quelle con più client. In questa fase è richiesto che la scheda di rete venga messa in monitor mode.
 
-2. **Disconnessione del target**: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete target. Questo forza i client a disconnettersi dal punto di accesso legittimo, creando un'interruzione temporanea del servizio che li spinge a cercare di riconnettersi.
+2. **Disconnessione del target**: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete target. Questo forza i client a disconnettersi dal punto di accesso legittimo, creando un'interruzione temporanea del servizio che li spinge a cercare di riconnettersi. Per raggiungere tale scopo è richiesto che la scheda di rete sia capace di iniettare pacchetti.
 
-3. **Creazione dell'AP malevolo**: Simultaneamente alla disconnessione, Wifiphisher crea un AP con lo stesso SSID della rete legittima il quale può anche utilizzare un canale differente per evitare interferenze con il punto di accesso originale.
+3. **Creazione dell'AP malevolo**: Simultaneamente alla disconnessione, Wifiphisher crea un AP con lo stesso SSID della rete legittima il quale può anche utilizzare un canale differente per evitare interferenze con l'access point originale. Questa pratica è chiamata *evil twin*, ovvero gemello maligno.
 
-4. **Connessione del client all'AP**: I client disconnessi, alla ricerca di riconnettersi alla loro rete, vedono il rogue AP con lo stesso SSID e si connettono ad esso. Poiché i client non percepiscono differenze evidenti, la connessione avviene senza ulteriori sospetti.
+4. **Connessione del client all'AP**: L'utente, vedendo il proprio dispositivo disconnesso, sarà indotto ad andare nelle impostazioni e provare a riconettersi al proprio Wi-Fi. Nell'elenco delle reti wireless non troverà la sua, ma solamente quella creata dall'AP maligno, poiché la rete legittima sarà stata nascosta dal dispositivo in quanto ritenuta non funzionante. 
 
-5. **Reindirizzamento alla pagina di phishing**: Una volta connessi, i client vengono automaticamente reindirizzati a una pagina web che simula l'interfaccia di aggiornamento del firmware del loro router (Figura 2). Questo reindirizzamento è ottenuto manipolando le impostazioni del server DHCP e DNS all'interno del rogue AP.
+5. **Reindirizzamento alla pagina di phishing**: Una volta connessi, i client vengono automaticamente reindirizzati a una pagina web che simula l'interfaccia di aggiornamento del firmware del loro router (Figura 2). Questo comportamento è ottenuto grazie ad un webserver e ad una manipolazione dei server DHCP e DNS all'interno dell'AP maligno.
 
 ![Un esempio della pagina di phishing](images/fw_upgrade.png)
 _Figura 2: Un esempio della pagina di phishing_
 
-6. **Raccolta delle credenziali**: La pagina di phishing chiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware. Quando l'utente inserisce la password, questa viene trasmessa all'attaccante. Dopo che l'attaccante ha ottenuto le informazioni, l'utente continuerà a vedere una barra di progressione che gli darà l'illusione di star effettivamente facendo l'aggiornmento software (Figura 3).
+6. **Raccolta delle credenziali**: La pagina di phishing chiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware, per rendenre il tutto credibile sono aggiunti anche dei finti termini e condizioni. Essendo la pagina personalizzabile, con pochissimo sforzo è possibile creare una pagina identica a quella originale. Quando l'utente inserisce la password quest'ultima verrà trasmessa all'attaccante, nel mentre, l'utente, verrà condotto in una pagina contenente una barra di progressione che gli darà l'illusione di star effettivamente facendo l'aggiornmento software (Figura 3).
 
 ![Un esempio della pagina di phishing](images/fw_upgrade-2.png)
 _Figura 3: Un esempio della barra di progressione_
 
-7. **Ripristino situazione precedente**: Una volta ottenuta la password l'attaccante spegnerà l'AP malevolo e l'utente potrà tornare a connettersi alla propria rete wifi legittima come se nulla fosse.
+7. **Ripristino situazione precedente**: Una volta ottenuta la password l'attaccante spegnerà l'AP malevolo, l'utente avrà l'illusione che l'aggiornamento software sia terminato e quindi si accingerà a riconnettersi al proprio Wi-Fi che sarà nuovamente quello legittimo perfettamente funzionante.
 
 
 ## Modello MITRE ATT&CK
