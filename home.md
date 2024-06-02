@@ -2,7 +2,7 @@
 
 ## Introduzione
 
-Wifiphisher è un potente strumento Python per condurre attacchi di phishing su reti Wi-Fi. Sfruttando ingegneria sociale e tecniche di spoofing, induce gli utenti a fornire credenziali o a compiere azioni che compromettono la sicurezza della rete. La sua efficacia risiede nell'assenza di brute force o exploit tradizionali, basandosi invece sulla manipolazione psicologica.
+Wifiphisher è un potente strumento Python per condurre attacchi di phishing su reti Wi-Fi. Sfruttando ingegneria sociale e tecniche di spoofing, induce gli utenti a fornire credenziali o a compiere azioni che compromettono la sicurezza della rete.
 
 ## Funzionamento di Wifiphisher
 
@@ -12,6 +12,9 @@ Il funzionamento di Wifiphisher si basa su tre fasi principali:
 Per poter effettuare questa operazione è necessario che la scheda di rete dell'attacante supporti la monitor mode e la packet injection.
 2. **Creazione di un AP malevolo**: Dopo aver disconnesso il client, Wifiphisher crea un access point malevolo con lo stesso SSID dell'AP legittimo. Il client, non riuscendo a connettersi alla propria rete a causa dei pacchetti di deautenticazione, si collega inconsapevolmente all'AP malevolo.
 3. **Phishing tramite pagina web**: Una volta connesso all'AP malevolo, il client viene reindirizzato a una pagina web di phishing che può assumere diverse forme a seconda dell'attacco specifico. Queste pagine sono progettate per sembrare legittime e convincere l'utente a fornire informazioni sensibili. Le pagine possono essere create ad-hoc per l'attacco oppure è possibile sfruttare quelle già presenti online create da altri utenti.
+
+![Vignetta che rappresenta il funzionamento dell'attacco](images/scheme.jpeg)
+
 
 ## Tipologie di attacco
 
