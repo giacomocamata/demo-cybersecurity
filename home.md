@@ -61,37 +61,20 @@ In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page util
    - Gather Victim Network Information (T1590): Wifiphisher utilizza strumenti come airodump-ng per monitorare le reti wireless vicine e raccogliere informazioni sulle reti e sui dispositivi connessi.
 2. **Resource Development**:
    - Compromise Infrastructure (T1584): L'attaccante prepara un punto di accesso malevolo, configurandolo per imitare la rete legittima (evil twin).
+   - Deauthentication (T1587.002): Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete legittima, forzando la loro disconnessione.
 3. **Initial Access**:
    - Drive-by Compromise (T1189): Inducendo gli utenti a connettersi al punto di accesso malevolo, Wifiphisher ottiene l'accesso iniziale ai dispositivi target.
 4. **Execution**:
    - Command and Scripting Interpreter (T1059): L'esecuzione degli script necessari per inviare pacchetti di deautenticazione e reindirizzare il traffico dei client.
+   - Phishing (T1566): Gli utenti connessi all'AP malevolo vengono reindirizzati a una pagina di phishing che richiede l'inserimento delle credenziali Wi-Fi.
 5. **Credential Access**:
    - Credentials from Web Browsers (T1555.003): Tramite una pagina di phishing, Wifiphisher raccoglie le credenziali Wi-Fi inserite dagli utenti.
-6. **Impact**:
+   - Adversary-in-the-Middle (T1557): Creando un AP malevolo che imita la rete legittima, Wifiphisher esegue un attacco MitM, intercettando e manipolando il traffico tra i client e l'AP.
+6. **Command and Control**
+   - Web Service (T1102): Wifiphisher ospita una pagina web fraudolenta su un server interno, utilizzato per presentare la falsa pagina di aggiornamento firmware.
+7. **Impact**:
    - Resource Hijacking (T1496): Forzando la disconnessione e inducendo gli utenti a connettersi al punto di accesso malevolo, l'attaccante dirotta temporaneamente le risorse di rete dell'utente.
-
-???????????????????????????????????????????????????????????????????????????
-
-
-Tecniche
-Deauthentication (T1587.002):
-
-a. Disconnessione dei Client: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete legittima, forzando la loro disconnessione.
-Adversary-in-the-Middle (T1557):
-
-a. Man-in-the-Middle (MitM) Attack: Creando un AP malevolo che imita la rete legittima, Wifiphisher esegue un attacco MitM, intercettando e manipolando il traffico tra i client e l'AP.
-Phishing (T1566):
-
-a. Phishing con una Pagina Web Fraudolenta: Gli utenti connessi all'AP malevolo vengono reindirizzati a una pagina di phishing che richiede l'inserimento delle credenziali Wi-Fi.
-Web Service (T1102):
-
-a. Hosting di Contenuti Malevoli: Wifiphisher ospita una pagina web fraudolenta su un server interno, utilizzato per presentare la falsa pagina di aggiornamento firmware.
-Network Denial of Service (T1498):
-
-a. Denial of Service (DoS): La disconnessione dei client dalla rete legittima crea una condizione di Denial of Service temporanea, inducendo gli utenti a cercare altre reti disponibili.
-Spear Phishing Attachment (T1566.001):
-
-a. Termini e Condizioni Falsi: L'inserimento di termini e condizioni fittizi nella pagina di phishing per aumentare la credibilità e indurre l'utente a fornire le credenziali.
+   - Network Denial of Service (T1498): La disconnessione dei client dalla rete legittima crea una condizione di Denial of Service temporanea, inducendo gli utenti a cercare altre reti disponibili.
 
 ## Prevenzione
 
