@@ -87,3 +87,4 @@ Questa demo mira a dimostrare quanto sia facile ingannare un utente poco informa
 ## Fonti
 - [https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher)
 - [https://attack.mitre.org/](https://attack.mitre.org/)
+
