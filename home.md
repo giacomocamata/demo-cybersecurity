@@ -58,31 +58,32 @@ _Figura 3: Un esempio della barra di progressione_
 In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page utilizza diverse categorie di tattiche e differenti tecniche, ecco le principali:
 
 1. **Reconnaissance** :
-   - Gather Victim Network Information (T1590): Wifiphisher utilizza strumenti come airodump-ng per monitorare le reti wireless vicine e raccogliere informazioni sulle reti e sui dispositivi connessi.
+   - Gather Victim Network Information (T1590): Wifiphisher utilizza strumenti come airodump-ng per monitorare le reti wireless vicine e raccogliere informazioni sulle reti e sui dispositivi connessi
 2. **Resource Development**:
-   - Compromise Infrastructure (T1584): L'attaccante prepara un punto di accesso malevolo, configurandolo per imitare la rete legittima (evil twin).
-   - Deauthentication (T1587.002): Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete legittima, forzando la loro disconnessione.
+   - Compromise Infrastructure (T1584): L'attaccante prepara un punto di accesso malevolo, configurandolo per imitare la rete legittima (evil twin)
+   - Deauthentication (T1587.002): Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete legittima, forzando la loro disconnessione
 3. **Initial Access**:
-   - Drive-by Compromise (T1189): Inducendo gli utenti a connettersi al punto di accesso malevolo, Wifiphisher ottiene l'accesso iniziale ai dispositivi target.
+   - Drive-by Compromise (T1189): Inducendo gli utenti a connettersi al punto di accesso malevolo, Wifiphisher ottiene l'accesso iniziale ai dispositivi target
 4. **Execution**:
-   - Command and Scripting Interpreter (T1059): L'esecuzione degli script necessari per inviare pacchetti di deautenticazione e reindirizzare il traffico dei client.
-   - Phishing (T1566): Gli utenti connessi all'AP malevolo vengono reindirizzati a una pagina di phishing che richiede l'inserimento delle credenziali Wi-Fi.
+   - Command and Scripting Interpreter (T1059): L'esecuzione degli script necessari per inviare pacchetti di deautenticazione e reindirizzare il traffico dei client
+   - Phishing (T1566): Gli utenti connessi all'AP malevolo vengono reindirizzati a una pagina di phishing che richiede l'inserimento delle credenziali Wi-Fi
 5. **Credential Access**:
-   - Credentials from Web Browsers (T1555.003): Tramite una pagina di phishing, Wifiphisher raccoglie le credenziali Wi-Fi inserite dagli utenti.
-   - Adversary-in-the-Middle (T1557): Creando un AP malevolo che imita la rete legittima, Wifiphisher esegue un attacco MitM, intercettando e manipolando il traffico tra i client e l'AP.
+   - Credentials from Web Browsers (T1555.003): Tramite una pagina di phishing, Wifiphisher raccoglie le credenziali Wi-Fi inserite dagli utenti
+   - Adversary-in-the-Middle (T1557): Creando un AP malevolo che imita la rete legittima, Wifiphisher esegue un attacco MitM, intercettando e manipolando il traffico tra i client e l'AP
 6. **Command and Control**
-   - Web Service (T1102): Wifiphisher ospita una pagina web fraudolenta su un server interno, utilizzato per presentare la falsa pagina di aggiornamento firmware.
+   - Web Service (T1102): Wifiphisher ospita una pagina web fraudolenta su un server interno, utilizzato per presentare la falsa pagina di aggiornamento firmware
 7. **Impact**:
-   - Resource Hijacking (T1496): Forzando la disconnessione e inducendo gli utenti a connettersi al punto di accesso malevolo, l'attaccante dirotta temporaneamente le risorse di rete dell'utente.
-   - Network Denial of Service (T1498): La disconnessione dei client dalla rete legittima crea una condizione di Denial of Service temporanea, inducendo gli utenti a cercare altre reti disponibili.
+   - Resource Hijacking (T1496): Forzando la disconnessione e inducendo gli utenti a connettersi al punto di accesso malevolo, l'attaccante dirotta temporaneamente le risorse di rete dell'utente
+   - Network Denial of Service (T1498): La disconnessione dei client dalla rete legittima crea una condizione di Denial of Service temporanea, inducendo gli utenti a cercare altre reti disponibili
 
 ## Prevenzione
 
-Per proteggersi contro attacchi di questo tipo è fondamentale educare gli utenti riguardo alle buone pratiche di sicurezza informatica. Gli utenti devono essere sensibilizzati sull'importanza di connettersi solo a reti Wi-Fi sicure e conosciute, evitando reti pubbliche o non protette. Inoltre, è cruciale riconoscere le caratteristiche di un tentativo di phishing, come richieste improvvise di inserimento di credenziali o messaggi di avviso insoliti. 
+Per proteggersi contro attacchi di questo tipo è fondamentale educare gli utenti riguardo alle buone pratiche di sicurezza informatica. Informare gli utenti dell'esistenza di tali tipologie di attacchi è il modo migliore per evitare che tali attacchi si verifichino.
 
 ## Conclusioni
 
-Wifiphisher rappresenta uno strumento potente per dimostrare le vulnerabilità delle reti Wi-Fi attraverso tecniche di ingegneria sociale. La tecnica del Firmware Update Page evidenzia come l'attaccante possa sfruttare la fiducia dell'utente in contesti apparentemente legittimi per ottenere credenziali di accesso sensibili. Comprendere il funzionamento di queste tecniche e adottare adeguate contromisure è essenziale per proteggere le reti wireless da attacchi di phishing e altre forme di compromissione. Educare gli utenti, mantenere aggiornati i dispositivi e implementare protocolli di sicurezza avanzati sono passi fondamentali per mitigare i rischi associati a questi attacchi.
+Questa demo mira a dimostrare quanto sia facile ingannare un utente poco informato, sottolineando che una conoscenza di base dei dispositivi che usiamo quotidianamente, come il modem per la navigazione su internet, e del loro funzionamento, ad esempio il fatto che gli aggiornamenti software non richiedono la password del Wi-Fi, può proteggerci da attacchi di questo tipo.
 
 ## Fonti
-[https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher)
+- [https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher)
+- [https://attack.mitre.org/](https://attack.mitre.org/)
