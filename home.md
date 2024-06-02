@@ -28,13 +28,13 @@ Il tool include diverse tecniche di attacco:
 
 ## Tecnica Firmware Update Page
 
-Entriamo nello specifico della prima tecnica: Firmware Update Page la quale sfrutta la fiducia che gli utenti ripongono nelle notifiche di aggiornamento del firmware dei loro router. Al termine dell'attacco, l'utente non esperto, non si sentirà di aver subito una truffa ma, al contrario, sarà felice di aver aggiornato il firmware del suo modem.
+Entriamo nello specifico della prima tecnica: Firmware Update Page, la quale sfrutta la fiducia che gli utenti ripongono nelle notifiche di aggiornamento del firmware dei loro router. Al termine dell'attacco, l'utente non esperto, non si sentirà ingannato ma, al contrario, sarà felice perchè crederà di aver aggiornato il firmware del suo modem.
 
 ### Fasi dell'attacco in dettaglio
 
-1. **Selezione del target**: L'attaccante identifica un punto di accesso Wi-Fi con un elevato numero di utenti connessi, utilizzando strumenti come `airodump-ng` per monitorare le reti wireless vicine e individuare quelle con più client. In questa fase, è necessario che la scheda di rete sia configurata in modalità monitor.
+1. **Selezione del target**: L'attaccante identifica un access point Wi-Fi con un elevato numero di utenti connessi, utilizzando strumenti come `airodump-ng` per monitorare le reti wireless vicine e individuare quelle con più client. In questa fase, è necessario che la scheda di rete sia configurata in modalità monitor.
 
-2. **Disconnessione del target**: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete target, forzandoli a disconnettersi dal punto di accesso legittimo. Questa interruzione temporanea del servizio induce gli utenti a cercare di riconnettersi. Per realizzare questa fase, la scheda di rete deve essere in grado di iniettare pacchetti.
+2. **Disconnessione del target**: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete target, forzandoli a disconnettersi dall'access point legittimo. Questa interruzione temporanea del servizio, induce gli utenti a cercare di riconnettersi. Per realizzare questa fase, la scheda di rete deve essere in grado di iniettare pacchetti sia all'AP che al client, in modo tale che si disconnettano.
 
 3. **Creazione dell'AP malevolo**: Simultaneamente alla disconnessione, Wifiphisher crea un AP con lo stesso SSID della rete legittima il quale può anche utilizzare un canale differente per evitare interferenze con l'access point originale. Questa pratica è chiamata *evil twin*, ovvero gemello maligno.
 
