@@ -9,9 +9,9 @@ Wifiphisher è un potente strumento per condurre attacchi di phishing su reti Wi
 Il funzionamento di Wifiphisher si basa su tre fasi principali:
 
 1. **Disconnessione del target**: Wifiphisher inizia inviando pacchetti di deautenticazione al client target e all'AP legittimo. Questi pacchetti, causano la disconnessione forzata del client dalla rete originale.
-Per poter effettuare questa operazione è necessario che la scheda di rete dell'attacante supporti la monitor mode, per poter scnasionare le reti wireless nelle vicinanze, e la packet injection, per poter inviare i pacchetti di deautenticazione.
+Per poter effettuare questa operazione è necessario che la scheda di rete dell'attacante supporti sia la monitor mode, per poter scansionare le reti wireless nelle vicinanze, sia la packet injection, per poter inviare i pacchetti di deautenticazione.
 2. **Creazione di un AP malevolo**: Dopo aver disconnesso il client, Wifiphisher crea un access point malevolo con lo stesso SSID dell'AP legittimo. Il client, non riuscendo a connettersi alla propria rete a causa dei pacchetti di deautenticazione, si collega inconsapevolmente all'AP malevolo.
-3. **Phishing tramite pagina web**: Una volta connesso all'AP malevolo, il client viene reindirizzato a una pagina web di phishing che può assumere diverse forme a seconda dell'attacco specifico. Queste pagine sono progettate per sembrare legittime e convincere l'utente a fornire informazioni sensibili. Le pagine possono essere create ad-hoc per l'attacco oppure è possibile sfruttare quelle già presenti online create da altri utenti.
+3. **Phishing tramite pagina web**: Una volta connesso all'AP malevolo, il client viene reindirizzato a una pagina web di phishing che può assumere diverse forme a seconda dell'attacco specifico. Queste pagine sono progettate per sembrare legittime e convincere l'utente a fornire informazioni sensibili.
 
 ![Vignetta che rappresenta il funzionamento dell'attacco](images/scheme.jpeg)
 _Figura 1: Vignetta che rappresenta il funzionamento dell'attacco_
@@ -22,13 +22,13 @@ _Figura 1: Vignetta che rappresenta il funzionamento dell'attacco_
 Il tool include diverse tecniche di attacco:
 
 1. **Firmware Update Page**: Questo attacco presenta all'utente una pagina che simula un aggiornamento del firmware del router. L'utente viene invitato a inserire la password del Wi-Fi per procedere con l'aggiornamento.
-2. **OAuth Login Page**: Questo attacco reindirizza l'utente a una pagina di login che simula un servizio OAuth comune (ad esempio, Google, Facebook) per ottenere le credenziali di accesso.
-3. **Browser Plugin Update**: In questo scenario, l'utente vede una pagina che gli comunica la necessità di aggiornare un plugin del browser. L'utente viene quindi indotto a scaricare e installare un malware.
-4. **Network Manager Connect**: Questa tecnica presenta all'utente una pagina che simula l'interfaccia di connessione del sistema operativo, richiedendo nuovamente la password del Wi-Fi per connettersi alla rete.
+2. **OAuth Login Page**: Questa tecnica reindirizza l'utente a una pagina di login che simula un servizio OAuth (ad esempio, Google, Facebook) per ottenere le credenziali di accesso.
+3. **Browser Plugin Update**: In questo caso, l'utente vede una pagina che gli comunica la necessità di aggiornare un plugin del browser. L'utente viene quindi indotto a scaricare e installare un malware.
+4. **Network Manager Connect**: Questo attacco presenta all'utente una pagina che simula l'interfaccia di connessione del sistema operativo, richiedendo nuovamente la password del Wi-Fi per connettersi alla rete.
 
 ## Tecnica Firmware Update Page
 
-Questa tecnica sfrutta la fiducia che gli utenti ripongono nelle notifiche di aggiornamento del firmware dei loro router. Al termine della tecnica l'utente non esperto non si sentirà di aver subito una truffa ma,al contrario, sarà felice di aver aggiornato il firmware del suo modem.
+La tecnica sfrutta la fiducia che gli utenti ripongono nelle notifiche di aggiornamento del firmware dei loro router. Al termine dell'attacco, l'utente non esperto, non si sentirà di aver subito una truffa ma, al contrario, sarà felice di aver aggiornato il firmware del suo modem.
 
 ### Fasi dell'attacco in dettaglio
 
