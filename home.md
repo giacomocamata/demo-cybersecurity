@@ -55,7 +55,7 @@ _Figura 3: Un esempio della barra di progressione_
 
 ## Modello MITRE ATT&CK
 
-In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page utilizza diverse categorie di tattiche e differenti tecniche, ecco le principali:
+In riferimento al modello MITRE ATT&CK, l'attaco Firmware Update Page utilizza diverse categorie di tattiche e differenti tecniche, ecco le principali:
 
 1. **Reconnaissance** :
    - Gather Victim Network Information (T1590): Wifiphisher utilizza strumenti come airodump-ng per monitorare le reti wireless vicine e raccogliere informazioni sulle reti e sui dispositivi connessi
@@ -78,11 +78,11 @@ In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page util
 
 ## Prevenzione
 
-Per proteggersi contro attacchi di questo tipo è fondamentale educare gli utenti riguardo alle buone pratiche di sicurezza informatica. Informare gli utenti dell'esistenza di tali tipologie di attacchi è il modo migliore per evitare che tali attacchi si verifichino.
+Informare gli utenti dell'esistenza di tali tipologie di attacchi è il modo migliore per evitare che questi si verifichino.
 
 ## Conclusioni
 
-Questa demo mira a dimostrare quanto sia facile ingannare un utente poco informato, sottolineando che una conoscenza di base dei dispositivi che usiamo quotidianamente, come il modem per la navigazione su internet, e del loro funzionamento, ad esempio il fatto che gli aggiornamenti software non richiedono la password del Wi-Fi, può proteggerci da attacchi di questo tipo.
+Questa demo mira a dimostrare quanto sia facile ingannare un utente poco informato. È importante conoscere il funzionamento dei dispositivi che usiamo quotidianamente, per esempio il modem per la navigazione su internet non chiederà la password del Wi-Fi per compiere un aggiornamento firmware.
 
 ## Fonti
 - [https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher)
