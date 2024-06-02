@@ -10,7 +10,7 @@ Il funzionamento di Wifiphisher si basa su tre fasi principali:
 
 1. **Disconnessione del target**: Wifiphisher inizia inviando pacchetti di deautenticazione al client target e all'AP legittimo. Questi pacchetti, causano la disconnessione forzata del client dalla rete originale.
 Per poter effettuare questa operazione è necessario che la scheda di rete dell'attacante supporti sia la monitor mode, per poter scansionare le reti wireless nelle vicinanze, sia la packet injection, per poter inviare i pacchetti di deautenticazione.
-2. **Creazione di un AP malevolo**: Dopo aver disconnesso il client, Wifiphisher crea un access point malevolo con lo stesso SSID dell'AP legittimo. Il client, non riuscendo a connettersi alla propria rete a causa dei pacchetti di deautenticazione, si collega inconsapevolmente all'AP malevolo.
+2. **Creazione di un AP malevolo**: Dopo aver disconnesso il client, Wifiphisher crea un access point (AP) malevolo con lo stesso SSID dell'AP legittimo. Il client, non riuscendo a connettersi alla propria rete a causa dei pacchetti di deautenticazione, si collega inconsapevolmente all'AP malevolo.
 3. **Phishing tramite pagina web**: Una volta connesso all'AP malevolo, il client viene reindirizzato a una pagina web di phishing che può assumere diverse forme a seconda dell'attacco specifico. Queste pagine sono progettate per sembrare legittime e convincere l'utente a fornire informazioni sensibili.
 
 ![Vignetta che rappresenta il funzionamento dell'attacco](images/scheme.jpeg)
@@ -32,15 +32,15 @@ La tecnica sfrutta la fiducia che gli utenti ripongono nelle notifiche di aggior
 
 ### Fasi dell'attacco in dettaglio
 
-1. **Selezione del target**: L'attaccante sceglie un punto di accesso Wi-Fi con un'alta probabilità di avere molti utenti connessi. Il tool utilizza strumenti come `airodump-ng` per monitorare le reti wireless vicine e identificare quelle con più client. In questa fase è richiesto che la scheda di rete venga messa in monitor mode.
+1. **Selezione del target**: L'attaccante identifica un punto di accesso Wi-Fi con un elevato numero di utenti connessi, utilizzando strumenti come `airodump-ng` per monitorare le reti wireless vicine e individuare quelle con più client. In questa fase, è necessario che la scheda di rete sia configurata in modalità monitor.
 
-2. **Disconnessione del target**: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete target. Questo forza i client a disconnettersi dal punto di accesso legittimo, creando un'interruzione temporanea del servizio che li spinge a cercare di riconnettersi. Per raggiungere tale scopo è richiesto che la scheda di rete sia capace di iniettare pacchetti.
+2. **Disconnessione del target**: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete target, forzandoli a disconnettersi dal punto di accesso legittimo. Questa interruzione temporanea del servizio induce gli utenti a cercare di riconnettersi. Per realizzare questa fase, la scheda di rete deve essere in grado di iniettare pacchetti.
 
 3. **Creazione dell'AP malevolo**: Simultaneamente alla disconnessione, Wifiphisher crea un AP con lo stesso SSID della rete legittima il quale può anche utilizzare un canale differente per evitare interferenze con l'access point originale. Questa pratica è chiamata *evil twin*, ovvero gemello maligno.
 
-4. **Connessione del client all'AP**: L'utente, vedendo il proprio dispositivo disconnesso, sarà indotto ad andare nelle impostazioni e provare a riconettersi al proprio Wi-Fi. Nell'elenco delle reti wireless non troverà la sua, ma solamente quella creata dall'AP maligno, poiché la rete legittima sarà stata nascosta dal dispositivo in quanto ritenuta non funzionante. 
+4. **Connessione del client all'AP**: Quando l'utente nota che il proprio dispositivo è disconnesso, tenta di riconnettersi al Wi-Fi nelle impostazioni del dispositivo. Non trovando la rete legittima, l'utente vede solo la rete creata dall'AP maligno, poiché la rete legittima è stata nascosta poiché considerata non funzionante.
 
-5. **Reindirizzamento alla pagina di phishing**: Una volta connessi, i client vengono automaticamente reindirizzati a una pagina web che simula l'interfaccia di aggiornamento del firmware del loro router (Figura 2). Questo comportamento è ottenuto grazie ad un webserver e ad una manipolazione dei server DHCP e DNS all'interno dell'AP maligno.
+5. **Reindirizzamento alla pagina di phishing**: Una volta connessi, i client vengono automaticamente reindirizzati a una pagina web che simula l'interfaccia di aggiornamento del firmware del loro router (Figura 2). Questo è possibile grazie a un web server e alla manipolazione dei server DHCP e DNS all'interno dell'AP maligno.
 
 ![Un esempio della pagina di phishing](images/fw_upgrade.png)
 _Figura 2: Un esempio della pagina di phishing_
