@@ -40,11 +40,18 @@ Questa tecnica sfrutta la fiducia che gli utenti ripongono nelle notifiche di ag
 
 4. **Connessione del client all'AP**: I client disconnessi, alla ricerca di riconnettersi alla loro rete, vedono il rogue AP con lo stesso SSID e si connettono ad esso. Poiché i client non percepiscono differenze evidenti, la connessione avviene senza ulteriori sospetti.
 
-5. **Reindirizzamento alla pagina di phishing**: Una volta connessi, i client vengono automaticamente reindirizzati a una pagina web che simula l'interfaccia di aggiornamento del firmware del loro router. Questo reindirizzamento è ottenuto manipolando le impostazioni del server DHCP e DNS all'interno del rogue AP.
+5. **Reindirizzamento alla pagina di phishing**: Una volta connessi, i client vengono automaticamente reindirizzati a una pagina web che simula l'interfaccia di aggiornamento del firmware del loro router (Figura 2). Questo reindirizzamento è ottenuto manipolando le impostazioni del server DHCP e DNS all'interno del rogue AP.
 
-6. **Raccolta delle credenziali**: La pagina di phishing chiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware. Quando l'utente inserisce la password, questa viene trasmessa all'attaccante.
+![Un esempio della pagina di phishing](images/fw_upgrade.png)
+_Figura 2: Un esempio della pagina di phishing_
+
+6. **Raccolta delle credenziali**: La pagina di phishing chiede agli utenti di inserire la password del Wi-Fi per procedere con l'aggiornamento del firmware. Quando l'utente inserisce la password, questa viene trasmessa all'attaccante. Dopo che l'attaccante ha ottenuto le informazioni, l'utente continuerà a vedere una barra di progressione che gli darà l'illusione di star effettivamente facendo l'aggiornmento software.
+
+![Un esempio della pagina di phishing](images/fw_upgrade-2.png)
+_Figura 3: Un esempio della barra di progressione_
 
 7. **Ripristino situazione precedente**: Una volta ottenuta la password l'attaccante spegnerà l'AP malevolo e l'utente potrà tornare a connettersi alla propria rete wifi legittima come se nulla fosse.
+
 
 ## Modello MITRE ATT&CK
 
