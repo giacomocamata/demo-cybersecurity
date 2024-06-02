@@ -59,8 +59,8 @@ Per proteggersi contro attacchi di questo tipo, è fondamentale educare corretta
 
 Wifiphisher rappresenta uno strumento potente per dimostrare le vulnerabilità delle reti Wi-Fi attraverso tecniche di ingegneria sociale. La tecnica del Firmware Update Page evidenzia come l'attaccante possa sfruttare la fiducia dell'utente in contesti apparentemente legittimi per ottenere credenziali di accesso sensibili. Comprendere il funzionamento di queste tecniche e adottare adeguate contromisure è essenziale per proteggere le reti wireless da attacchi di phishing e altre forme di compromissione. Educare gli utenti, mantenere aggiornati i dispositivi e implementare protocolli di sicurezza avanzati sono passi fondamentali per mitigare i rischi associati a questi attacchi.
 
-
-
+## Risorse(?)
+[https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher)
 
 
 
