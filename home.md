@@ -9,7 +9,7 @@ Wifiphisher è un potente strumento Python per condurre attacchi di phishing su 
 Il funzionamento di Wifiphisher si basa su tre fasi principali:
 
 1. **Disconnessione del target**: Wifiphisher inizia inviando pacchetti di deautenticazione al client target e all'AP legittimo. Questi pacchetti, causano la disconnessione forzata del client dalla rete originale.
-Per poter effettuare questa operazione è necessario che la scheda di rete dell'attacante supporti la monitor mode e la packet injection.
+Per poter effettuare questa operazione è necessario che la scheda di rete dell'attacante supporti la monitor mode, per poter scnasionare le reti wireless nelle vicinanze, e la packet injection, per poter inviare i pacchetti di deautenticazione.
 2. **Creazione di un AP malevolo**: Dopo aver disconnesso il client, Wifiphisher crea un access point malevolo con lo stesso SSID dell'AP legittimo. Il client, non riuscendo a connettersi alla propria rete a causa dei pacchetti di deautenticazione, si collega inconsapevolmente all'AP malevolo.
 3. **Phishing tramite pagina web**: Una volta connesso all'AP malevolo, il client viene reindirizzato a una pagina web di phishing che può assumere diverse forme a seconda dell'attacco specifico. Queste pagine sono progettate per sembrare legittime e convincere l'utente a fornire informazioni sensibili. Le pagine possono essere create ad-hoc per l'attacco oppure è possibile sfruttare quelle già presenti online create da altri utenti.
 
@@ -24,7 +24,7 @@ Il tool include diverse tecniche di attacco:
 1. **Firmware Update Page**: Questo attacco presenta all'utente una pagina che simula un aggiornamento del firmware del router. L'utente viene invitato a inserire la password del Wi-Fi per procedere con l'aggiornamento.
 2. **OAuth Login Page**: Questo attacco reindirizza l'utente a una pagina di login che simula un servizio OAuth comune (ad esempio, Google, Facebook) per ottenere le credenziali di accesso.
 3. **Browser Plugin Update**: In questo scenario, l'utente vede una pagina che gli comunica la necessità di aggiornare un plugin del browser. L'utente viene quindi indotto a scaricare e installare un malware.
-4. **Network Manager Connect**: Questa tecnica presenta all'utente una pagina che simula l'interfaccia di connessione del network manager del sistema operativo, richiedendo nuovamente la password del Wi-Fi per connettersi alla rete.
+4. **Network Manager Connect**: Questa tecnica presenta all'utente una pagina che simula l'interfaccia di connessione del sistema operativo, richiedendo nuovamente la password del Wi-Fi per connettersi alla rete.
 
 ## Tecnica Firmware Update Page
 
@@ -64,7 +64,7 @@ In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page può
 
 ## Prevenzione
 
-Per proteggersi contro attacchi di questo tipo, è fondamentale educare correttamente gli utenti affinchè non vengano ingannati.
+Per proteggersi contro attacchi di questo tipo è fondamentale educare gli utenti riguardo alle buone pratiche di sicurezza informatica. Gli utenti devono essere sensibilizzati sull'importanza di connettersi solo a reti Wi-Fi sicure e conosciute, evitando reti pubbliche o non protette. Inoltre, è cruciale riconoscere le caratteristiche di un tentativo di phishing, come richieste improvvise di inserimento di credenziali o messaggi di avviso insoliti. 
 
 ## Conclusioni
 
