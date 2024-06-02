@@ -72,6 +72,27 @@ In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page util
 
 ???????????????????????????????????????????????????????????????????????????
 
+
+Tecniche
+Deauthentication (T1587.002):
+
+a. Disconnessione dei Client: Wifiphisher invia pacchetti di deautenticazione ai client connessi alla rete legittima, forzando la loro disconnessione.
+Adversary-in-the-Middle (T1557):
+
+a. Man-in-the-Middle (MitM) Attack: Creando un AP malevolo che imita la rete legittima, Wifiphisher esegue un attacco MitM, intercettando e manipolando il traffico tra i client e l'AP.
+Phishing (T1566):
+
+a. Phishing con una Pagina Web Fraudolenta: Gli utenti connessi all'AP malevolo vengono reindirizzati a una pagina di phishing che richiede l'inserimento delle credenziali Wi-Fi.
+Web Service (T1102):
+
+a. Hosting di Contenuti Malevoli: Wifiphisher ospita una pagina web fraudolenta su un server interno, utilizzato per presentare la falsa pagina di aggiornamento firmware.
+Network Denial of Service (T1498):
+
+a. Denial of Service (DoS): La disconnessione dei client dalla rete legittima crea una condizione di Denial of Service temporanea, inducendo gli utenti a cercare altre reti disponibili.
+Spear Phishing Attachment (T1566.001):
+
+a. Termini e Condizioni Falsi: L'inserimento di termini e condizioni fittizi nella pagina di phishing per aumentare la credibilità e indurre l'utente a fornire le credenziali.
+
 ## Prevenzione
 
 Per proteggersi contro attacchi di questo tipo è fondamentale educare gli utenti riguardo alle buone pratiche di sicurezza informatica. Gli utenti devono essere sensibilizzati sull'importanza di connettersi solo a reti Wi-Fi sicure e conosciute, evitando reti pubbliche o non protette. Inoltre, è cruciale riconoscere le caratteristiche di un tentativo di phishing, come richieste improvvise di inserimento di credenziali o messaggi di avviso insoliti. 
