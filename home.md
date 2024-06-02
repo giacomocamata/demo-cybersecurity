@@ -50,7 +50,7 @@ _Figura 2: Un esempio della pagina di phishing_
 ![Un esempio della pagina di phishing](images/fw_upgrade-2.png)
 _Figura 3: Un esempio della barra di progressione_
 
-7. **Ripristino situazione precedente**: Dopo aver ottenuto la password, l'attaccante spegne l'AP malevolo. A questo l'utente crederà che l'aggiornamento software sia terminato e tenterà di riconnettersi al proprio Wi-Fi, che sarà nuovamente quello legittimo e perfettamente funzionante.
+7. **Ripristino situazione precedente**: Dopo aver ottenuto la password, l'attaccante spegne l'AP malevolo. A questo punto l'utente crederà che l'aggiornamento software sia terminato e tenterà di riconnettersi al proprio Wi-Fi, che sarà nuovamente quello legittimo e funzionante.
 
 
 ## Modello MITRE ATT&CK
@@ -79,7 +79,7 @@ In riferimento al modello MITRE ATT&CK, l'attaco Firmware Update Page utilizza d
 ## Conclusioni
 
 Questa demo mira a dimostrare quanto sia facile ingannare un utente poco informato. È importante conoscere il funzionamento dei dispositivi che usiamo quotidianamente, per esempio il modem per la navigazione su internet non chiederà la password del Wi-Fi per compiere un aggiornamento firmware.
-Informare gli utenti dell'esistenza di tali tipologie di attacchi è il modo migliore per evitare che questi si verifichino.
+Informare gli utenti dell'esistenza di tali tipologie di attacchi resta il modo migliore per evitare che questi si verifichino.
 
 ## Fonti
 - [https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher)
