@@ -55,20 +55,22 @@ _Figura 3: Un esempio della barra di progressione_
 
 ## Modello MITRE ATT&CK
 
-In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page può essere classificata sotto diverse categorie di tattiche e tecniche.
+In riferimento al modello MITRE ATT&CK, la tecnica del Firmware Update Page utilizza diverse categorie di tattiche e differenti tecniche, ecco le principali:
 
-1. Reconnaissance :
+1. **Reconnaissance** :
    - Gather Victim Network Information (T1590): Wifiphisher utilizza strumenti come airodump-ng per monitorare le reti wireless vicine e raccogliere informazioni sulle reti e sui dispositivi connessi.
-2. Resource Development:
+2. **Resource Development**:
    - Compromise Infrastructure (T1584): L'attaccante prepara un punto di accesso malevolo, configurandolo per imitare la rete legittima (evil twin).
-3. Initial Access:
+3. **Initial Access**:
    - Drive-by Compromise (T1189): Inducendo gli utenti a connettersi al punto di accesso malevolo, Wifiphisher ottiene l'accesso iniziale ai dispositivi target.
-4. Execution:
+4. **Execution**:
    - Command and Scripting Interpreter (T1059): L'esecuzione degli script necessari per inviare pacchetti di deautenticazione e reindirizzare il traffico dei client.
-5. Credential Access:
+5. **Credential Access**:
    - Credentials from Web Browsers (T1555.003): Tramite una pagina di phishing, Wifiphisher raccoglie le credenziali Wi-Fi inserite dagli utenti.
-6. Impact:
+6. **Impact**:
    - Resource Hijacking (T1496): Forzando la disconnessione e inducendo gli utenti a connettersi al punto di accesso malevolo, l'attaccante dirotta temporaneamente le risorse di rete dell'utente.
+
+???????????????????????????????????????????????????????????????????????????
 
 ## Prevenzione
 
