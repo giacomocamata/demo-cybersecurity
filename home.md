@@ -76,13 +76,10 @@ In riferimento al modello MITRE ATT&CK, l'attaco Firmware Update Page utilizza d
    - Resource Hijacking (T1496): Forzando la disconnessione e inducendo gli utenti a connettersi al punto di accesso malevolo, l'attaccante dirotta temporaneamente le risorse di rete dell'utente
    - Network Denial of Service (T1498): La disconnessione dei client dalla rete legittima crea una condizione di Denial of Service temporanea, inducendo gli utenti a cercare altre reti disponibili
 
-## Prevenzione
-
-Informare gli utenti dell'esistenza di tali tipologie di attacchi è il modo migliore per evitare che questi si verifichino.
-
 ## Conclusioni
 
 Questa demo mira a dimostrare quanto sia facile ingannare un utente poco informato. È importante conoscere il funzionamento dei dispositivi che usiamo quotidianamente, per esempio il modem per la navigazione su internet non chiederà la password del Wi-Fi per compiere un aggiornamento firmware.
+Informare gli utenti dell'esistenza di tali tipologie di attacchi è il modo migliore per evitare che questi si verifichino.
 
 ## Fonti
 - [https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher)
